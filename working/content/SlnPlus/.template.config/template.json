@@ -80,13 +80,14 @@
   "defaultName": "Solution1",
   "postActions": [
     {
+      "actionId": "AC1156F7-BB77-4DB8-B28F-24EEBCCA1E5C",
+      "condition": "git-init",
       "description": "Initializes a git repository for the template",
       "manualInstructions": [
         {
           "text": "Run the following command"
         }
       ],
-      "actionId": "AC1156F7-BB77-4DB8-B28F-24EEBCCA1E5C",
       "args": {
         "executable": "git",
         "args": "init && git add . && git commit -m 'Initial Project'"
