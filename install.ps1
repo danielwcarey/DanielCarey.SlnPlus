@@ -1,0 +1,1 @@
+dotnet new install ./working/content/SlnPlus

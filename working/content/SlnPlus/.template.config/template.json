@@ -62,6 +62,13 @@
           "description": "Target 9.0.100-preview.5"
         }
       ]
+    },
+    "git-init": {
+      "displayName": "Git Init",
+      "type": "parameter",
+      "description": "Initialize a git repository.",
+      "defaultValue": "true",
+      "datatype": "boolean"
     }
   },
   "sourceName": "Solution1",
@@ -70,5 +77,21 @@
       "path": "Solution1.sln"
     }
   ],
-  "defaultName": "Solution1"
+  "defaultName": "Solution1",
+  "postActions": [
+    {
+      "description": "Initializes a git repository for the template",
+      "manualInstructions": [
+        {
+          "text": "Run the following command"
+        }
+      ],
+      "actionId": "AC1156F7-BB77-4DB8-B28F-24EEBCCA1E5C",
+      "args": {
+        "executable": "git",
+        "args": "init && git add . && git commit -m 'Initial Project'"
+      },
+      "continueOnError": true
+    }
+  ]
 }

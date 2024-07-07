@@ -1,0 +1,1 @@
+dotnet new uninstall ./working/content/SlnPlus
