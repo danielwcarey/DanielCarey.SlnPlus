@@ -107,12 +107,22 @@ git commit -m 'Added projects'
 
 [MSBuild reference for .NET SDK projects - Analysis Mode]( https://docs.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#analysismode )
 
+### .NET Templating
+
 [dotnet templating]( https://github.com/dotnet/templating/wiki )
 
 [template.json reference]( https://github.com/dotnet/templating/wiki/Reference-for-template.json )
 
 [Template for 'dotnet new sln']( https://github.com/dotnet/sdk/tree/main/template_feed/Microsoft.DotNet.Common.ItemTemplates/content/Solution )
 
+### Analyzers
 
+[Analyzer Rules List]( https://github.com/dotnet/roslyn-analyzers/blob/main/src/NetAnalyzers/Core/AnalyzerReleases.Shipped.md )
 
+[Analyzer Rules Overview]( https://github.com/dotnet/roslyn-analyzers/blob/main/src/NetAnalyzers/Microsoft.CodeAnalysis.NetAnalyzers.md )
 
+[Main Roslyn Analyzers]( https://github.com/dotnet/roslyn-analyzers?tab=readme-ov-file#main-analyzers )
+
+[Microsoft.CodeAnalysis.NetAnalyzers]( https://github.com/dotnet/roslyn-analyzers#microsoftcodeanalysisnetanalyzers )
+
+[Analysis Leve]( https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#analysislevel )

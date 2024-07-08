@@ -2,22 +2,123 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "Daniel Carey",
   "classifications": [ "Solution" ],
+  "defaultName": "Solution1",
   "identity": "DanielCarey.SlnPlus",
   "name": "DanielCarey.SlnPlus",
+  "postActions": [
+    {
+      "actionId": "AC1156F7-BB77-4DB8-B28F-24EEBCCA1E5C",
+      "condition": "git-init",
+      "description": "Initializes a git repository for the template",
+      "manualInstructions": [
+        {
+          "text": "Run the following command"
+        }
+      ],
+      "args": {
+        "executable": "git",
+        "args": "init && git add . && git commit -m 'Initial Project'"
+      },
+      "continueOnError": true
+    }
+  ],
+  "primaryOutputs": [
+    {
+      "path": "Solution1.sln"
+    }
+  ],
   "shortName": "slnplus",
-  "tags": {
-    "type": "solution"
-  },
+  "sourceName": "Solution1",
   "sources": [
     { "exclude": [ ".template.config/**/*", "install.ps1", "uninstall.ps1" ] }
   ],
   "symbols": {
+    "analysis-level": {
+      "datatype": "choice",
+      "defaultValue": "latest",
+      "description": "The target analysis mode.",
+      "displayName": "Analysis Mode",
+      "replaces": "TEMPLATE-ANALYSIS-LEVEL",
+      "type": "parameter",
+      "choices": [
+        {
+          "choice": "latest",
+          "description": "The latest code analyzers that have been released are used."
+        },
+        {
+          "choice": "preview",
+          "description": "The latest code analyzers are used, even if they are in preview."
+        },
+        {
+          "choice": "8",
+          "description": "The set of rules that was available for the .NET 8 release is used, even if newer rules are available."
+        },
+        {
+          "choice": "7",
+          "description": "The set of rules that was available for the .NET 7 release is used, even if newer rules are available."
+        },
+        {
+          "choice": "6",
+          "description": "The set of rules that was available for the .NET 6 release is used, even if newer rules are available."
+        },
+        {
+          "choice": "5",
+          "description": "The set of rules that was available for the .NET 5 release is used, even if newer rules are available."
+        }
+      ]
+    },
+    "analysis-mode": {
+      "choices": [
+        {
+          "choice": "None",
+          "description": "All rules are disabled."
+        },
+        {
+          "choice": "Default",
+          "description": "Default rules are enabled as build warnings."
+        },
+        {
+          "choice": "Minimum",
+          "description": "More aggressive mode than Default mode."
+        },
+        {
+          "choice": "Recommdended",
+          "description": "More aggressive mode than Minimum mode."
+        },
+        {
+          "choice": "All",
+          "description": "All rules are enabled as build warnings."
+        }
+      ],
+      "datatype": "choice",
+      "defaultValue": "All",
+      "description": "The target analysis mode.",
+      "displayName": "Analysis Mode",
+      "replaces": "TEMPLATE-ANALYSIS-MODE",
+      "type": "parameter"
+    },
+    "code-analysis-treat-warnings-as-errors": {
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Code analysis treat warnings as errors",
+      "displayName": "CodeAnalysisTreatWarningsAsErrors",
+      "replaces": "TEMPLATE-CODE-ANALYSIS-TREAT-WARNINGS-AS-ERRORS",
+      "type": "parameter"
+    },
+    "enable-net-analyzers": {
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Enable .NET Analyzers",
+      "displayName": "EnableNETAnalyzers",
+      "replaces": "TEMPLATE-ENABLE-NET-ANALYZERS",
+      "type": "parameter"
+    },
     "framework": {
       "displayName": "Framework version",
       "type": "parameter",
       "description": "The target framework for the solution.",
-      "defaultValue": "net8.0",
       "datatype": "choice",
+      "defaultValue": "net8.0",
       "choices": [
         {
           "choice": "net8.0",
@@ -41,13 +142,20 @@
         }
       ]
     },
+    "git-init": {
+      "datatype": "boolean",
+      "defaultValue": "true",
+      "description": "Initialize a git repository.",
+      "displayName": "Git Init",
+      "type": "parameter"
+    },
     "sdk-version": {
       "displayName": "Sdk Version",
       "type": "parameter",
       "description": "The target sdk version.",
+      "datatype": "choice",
       "defaultValue": "8.0.302",
       "replaces": "TEMPLATE-SDK-VERSION",
-      "datatype": "choice",
       "choices": [
         {
           "choice": "8.0.302",
@@ -63,36 +171,16 @@
         }
       ]
     },
-    "git-init": {
-      "displayName": "Git Init",
-      "type": "parameter",
-      "description": "Initialize a git repository.",
+    "treat-warnings-as-errors": {
+      "datatype": "bool",
       "defaultValue": "true",
-      "datatype": "boolean"
+      "description": "Treat warnings as errors.",
+      "displayName": "Treat Warnings As Errors",
+      "replaces": "TEMPLATE-TREAT-WARNINGS-AS-ERRORS",
+      "type": "parameter"
     }
   },
-  "sourceName": "Solution1",
-  "primaryOutputs": [
-    {
-      "path": "Solution1.sln"
-    }
-  ],
-  "defaultName": "Solution1",
-  "postActions": [
-    {
-      "actionId": "AC1156F7-BB77-4DB8-B28F-24EEBCCA1E5C",
-      "condition": "git-init",
-      "description": "Initializes a git repository for the template",
-      "manualInstructions": [
-        {
-          "text": "Run the following command"
-        }
-      ],
-      "args": {
-        "executable": "git",
-        "args": "init && git add . && git commit -m 'Initial Project'"
-      },
-      "continueOnError": true
-    }
-  ]
+  "tags": {
+    "type": "solution"
+  }
 }

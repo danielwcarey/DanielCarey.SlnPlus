@@ -1,12 +1,13 @@
 <Project>
   <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+  <!-- See https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/overview for details on source code analysis -->
+  <!-- See https://github.com/dotnet/roslyn-analyzers/blob/main/src/NetAnalyzers/Core/AnalyzerReleases.Shipped.md Analyzer Rules -->
   <PropertyGroup>
       <Nullable>enable</Nullable>
-      <AnalysisMode>All</AnalysisMode>
-      <AnalysisLevel>8</AnalysisLevel>
-      <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-      <EnableNETAnalyzers>true</EnableNETAnalyzers>
-      <AnalysisMode>AllEnabledByDefault</AnalysisMode> 
-      <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+      <AnalysisMode>TEMPLATE-ANALYSIS-MODE</AnalysisMode>
+      <AnalysisLevel>TEMPLATE-ANALYSIS-LEVEL</AnalysisLevel>
+      <TreatWarningsAsErrors>TEMPLATE-TREAT-WARNINGS-AS-ERRORS</TreatWarningsAsErrors>
+      <EnableNETAnalyzers>TEMPLATE-ENABLE-NET-ANALYZERS</EnableNETAnalyzers>
+      <CodeAnalysisTreatWarningsAsErrors>TEMPLATE-CODE-ANALYSIS-TREAT-WARNINGS-AS-ERRORS</CodeAnalysisTreatWarningsAsErrors>
   </PropertyGroup>
 </Project>
