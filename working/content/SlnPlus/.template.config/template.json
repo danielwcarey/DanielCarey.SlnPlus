@@ -121,6 +121,10 @@
       "defaultValue": "net8.0",
       "choices": [
         {
+          "choice": "net9.0",
+          "description": "Target net9.0"
+        },
+        {
           "choice": "net8.0",
           "description": "Target net8.0"
         },
@@ -154,20 +158,20 @@
       "type": "parameter",
       "description": "The target sdk version.",
       "datatype": "choice",
-      "defaultValue": "8.0.302",
+      "defaultValue": "8.0.303",
       "replaces": "TEMPLATE-SDK-VERSION",
       "choices": [
         {
-          "choice": "8.0.302",
-          "description": "Target 8.0.302"
+          "choice": "9.0.100-preview.6",
+          "description": "Target 9.0.100-preview.6"
+        },
+        {
+          "choice": "8.0.303",
+          "description": "Target 8.0.303"
         },
         {
           "choice": "6.0.423",
           "description": "Target 6.0.423"
-        },
-        {
-          "choice": "9.0.100-preview.5",
-          "description": "Target 9.0.100-preview.5"
         }
       ]
     },
